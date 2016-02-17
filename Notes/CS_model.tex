@@ -3,7 +3,7 @@
 % Notes about the compressed sensing model for the multicarrier MIMO system
 %
 
-\documentclass{12pt, a4paper}{scrrprt}
+\documentclass[12pt, a4paper]{scrreprt}
 
 \usepackage[utf8]{inputenc}
 
@@ -33,6 +33,8 @@
 % short command for \operatorname{}
 \newcommand{\op}[1]{\operatorname{#1}}
 
+\newcommand{\mat}[1]{\mathbf{#1}}
+
 
 % ===========================================================================
 \begin{document}
@@ -42,11 +44,30 @@
   \section{Overview of Compressed Sensing}
   \label{sec:Overview of Compressed Sensing}
 
+  \subsection{Compressed Sensing Formulation}
+  \label{sub:subsection label}
+  \begin{equation}
+    \vec{x} = \mat{\Phi} \vec{y}
+    \label{eq:CS:Dense to compressed}
+  \end{equation}
+
+  \begin{equation}
+    \vec{x} = \mat{\Phi} \mat{\Psi} \vec{\theta}
+
+  \end{equation}
+
+  \subsection{Conditions for successful Parameter Estimation}
+  \label{sub:Conditions for successful Parameter Estimation}
+
+
   \section{Coherence and Sidelobe Level}
   \label{sec:Coherence and Sidelobe Level}
 
   \section{The Compressed Sensing Model for MC-MIMO}
   \label{sec:The Compressed Sensing Model for MC-MIMO}
+  The sparse MC-MIMO antenna array can be related to compressed sensing. The received signal from the sparse array represents the compressed signal $\vec{x}$, while the dense signal $\vec{y}$ from eq. \ref{eq:CS:Dense to compressed} is equivalent to the signal retrieved from a ``dense'' grid of available antenna positions.
+
+  Eq. \ref{eq:CS:Dense to compressed} also describes the relation between this grid of antenna positions, in which we distribute a small number of antennas to arrive at the sparse antenna geometry. The selection matrix $\mat{\Phi}$ is simply a matrix compiled of the rows of an identity matrix. The rows that are selected equate to the potential antenna positions where an actual antenna is placed.
 
   \subsection{The Sparse Parameter Space}
   \label{sub:The Sparse Parameter Space}
@@ -59,6 +80,5 @@
 
   \section{Analysis of the Compressed Sensing Model for MC-MIMO}
   \label{sec:Analysis of the Compressed Sensing Model for MC-MIMO}
-
 
 \end{document}
